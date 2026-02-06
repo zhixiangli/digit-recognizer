@@ -1,0 +1,14 @@
+[project]
+name = "digit-recognizer"
+version = "1.0.0"
+description = "Use CNN to achieve 99% in Kaggle digit recognizer"
+requires-python = ">=3.10"
+dependencies = [
+    "tensorflow>=2.16,<3",
+    "numpy>=1.26,<3",
+    "pandas>=2.2,<3",
+    "matplotlib>=3.9,<4",
+]
+
+[project.scripts]
+digit-recognizer = "cnn:main"
