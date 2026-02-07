@@ -8,20 +8,19 @@ Download training & testing data from [kaggle](https://www.kaggle.com/c/digit-re
 
 ## Setup
 
-Requires **Python 3.12+**.
+Requires **Python 3.12+** and [uv](https://docs.astral.sh/uv/).
 
-Create a virtual environment and install dependencies:
+Install dependencies:
 
 ```
-python -m venv .venv
-source .venv/bin/activate   # on Windows: .venv\Scripts\activate
-pip install .
+uv sync
 ```
 
 To upgrade dependencies to their latest compatible versions:
 
 ```
-pip install --upgrade .
+uv lock --upgrade
+uv sync
 ```
 
 ## Quick Start
@@ -29,11 +28,11 @@ pip install --upgrade .
 **Command Format**:
 
 ```
-python cnn.py (training data path) (testing data path) (predict output path)
+uv run digit-recognizer (training data path) (testing data path) (predict output path)
 ```
 
 **Example**:
 
 ```
-python cnn.py ./train.csv ./test.csv ./res.csv
+uv run digit-recognizer ./train.csv ./test.csv ./res.csv
 ```

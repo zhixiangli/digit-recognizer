@@ -3,13 +3,13 @@ import argparse
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas
-from tensorflow.keras.layers import (
+from keras.layers import (
     Conv2D, BatchNormalization, Dense, Dropout, Flatten, Input, MaxPooling2D,
     RandomRotation, RandomTranslation, RandomZoom,
 )
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.utils import to_categorical
+from keras.models import Sequential
+from keras.optimizers import Adam
+from keras.utils import to_categorical
 
 np.random.seed(1337)  # for reproducibility
 images_size = 28
@@ -73,7 +73,7 @@ def predict(model, test_csv, result_csv):
                                                                                      header=True)
 
 
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('train_data', action="store", default="./train.csv")
     parser.add_argument('test_data', action="store", default="./test.csv")
@@ -84,3 +84,7 @@ if __name__ == '__main__':
     model = build_model()
     train_model(model, train_x, train_y)
     predict(model, args.test_data, args.predict_data)
+
+
+if __name__ == '__main__':
+    main()

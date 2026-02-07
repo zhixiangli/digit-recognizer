@@ -1,11 +1,22 @@
+[build-system]
+requires = ["setuptools>=78.1.1"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "digit-recognizer"
 version = "1.0.0"
 description = "Use CNN to achieve 99% in digit recognizer"
 requires-python = ">=3.12"
 dependencies = [
+    "keras>=3.0",
     "tensorflow>=2.16",
     "numpy>=1.26",
     "pandas>=2.2",
     "matplotlib>=3.9",
 ]
+
+[tool.setuptools]
+py-modules = ["cnn"]
+
+[project.scripts]
+digit-recognizer = "cnn:main"
