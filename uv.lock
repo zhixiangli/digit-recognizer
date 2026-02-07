@@ -179,7 +179,7 @@ wheels = [
 [[package]]
 name = "digit-recognizer"
 version = "1.0.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "keras" },
     { name = "matplotlib" },
